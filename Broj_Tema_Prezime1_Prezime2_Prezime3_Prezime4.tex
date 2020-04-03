@@ -6,6 +6,7 @@
 \usepackage[T2A]{fontenc} % enable Cyrillic fonts
 \usepackage[utf8]{inputenc} % make weird characters work
 \usepackage{graphicx}
+\usepackage{amsmath}
 
 \usepackage[english,serbian]{babel}
 %\usepackage[english,serbianc]{babel} %ukljuciti babel sa ovim opcijama, umesto gornjim, ukoliko se koristi cirilica
@@ -55,7 +56,7 @@
 
 \title{Naslov seminarskog rada\\ \small{Seminarski rad u okviru kursa\\Metodologija stručnog i naučnog rada\\ Matematički fakultet}}
 
-\author{Aleksandra Bošković, drugi autor, treći autor, četvrti autor\\ kontakt email aleksandra94@hotmail.rs, drugog, trećeg, četvrtog autora}
+\author{Aleksandra Bošković, Milena Stojić, treći autor, četvrti autor\\ kontakt email aleksandra94@hotmail.rs, mstojic39@yahoo.com, trećeg, četvrtog autora}
 
 %\date{9.~april 2015.}
 
@@ -82,12 +83,12 @@ Da bismo opisali specifičnosti algoritma simuliranog kaljenja uvedimo nekoliko 
 
 \subsection{Odabir resenja}
 Neka je $w\in\Omega$ inicijalno rešenje problema koje proizvoljno biramo iz skupa $\Omega$ i $w'\in N(w)$ proizvoljno odabrano susedno rešenje nekim predefinisanim pravilom ili slučajnim izborom. Ukoliko pogledamo uslov da resenje bude maksimum zaključujemo da nam je bolje ono rešenje koje ima vecu vrednost funkcije $f$.Ukoliko bismo u svakoj iteraciji birali rešenje koje ima veću vrednost funkcije $f$ algoritam bi se sveo na algoritam penjanja uzbrdo.Problem algoritma penjanja uzbrdo se javlja kada se naidje na lokalni maksimum i tu se dalja pretraga zaglavljuje jer svako susedno resenje nije bolje od njega.Jos jedna situacija u kojoj algoritam penjanja uzbrdo pokazuje slabosti je pojava platoa gde iz istog razloga pretraga ostane zaglavljena.Da bismo resili ovakve probleme algoritam simuliranog kaljenja za odluku koje od dva resenja ce uzeti za sledecu iteraciju bazira na verovatnoci $p$ prihvatljivosti da novo resenje bude uzeto za trenutno u narednoj iteraciji.
-\[ p =
+$$ p =
   \begin{cases}
-    \exp(f(w')-f(w)/t_k)  \quad f(w) > f(w'),\\
-    1  \quad f(w) \leq f(w')\\
+     \quad \exp(f(w')-f(w)/t_k),  \quad f(w) > f(w'), \\
+      \quad f(w) \leq f(w') \\
   \end{cases}
-\]
+$$ \\
 
 
 gde je $t_k$ temperaturni parametar iteracije k i n maksimali broj iteracija za koji vazi:
@@ -140,9 +141,11 @@ Za prevođenje programa napisanih u programskom jeziku C može se koristiti GCC 
  Da bi se ispitivala ispravost softvera, najpre je potrebno precizno definisati njegovo ponašanje \cite{laski2009software}. 
 \end{primer}
 
-\
+\subsection{Prednosti i nedostaci simuliranog kaljenja}
 
-
+Prednost simuliranog kaljenja (u odnosu na klasican genetski algoritam) je dobra lokalna pretraga.(c) Ono ce uvek naci najbolje resenje u neposrednoj blizini. Medjutim to je u isto vreme i slabost, iako u teoriji ovaj algoritam moze da konvergira ka globalnom optimalnom resenju. \par
+Ovaj nedostatak moze da se prevazidje sa vise zasebnih izvrsavanja. Svako sledece izvrsavanje pocinjemo sa novim pocetnim resenjem. Na kraju uzimamo najbolji finalni rezultat. U narednim iteracijama ne koristimo znanje dobijeno u prethodnim iteracijama. To je mana ovog pristupa. \par
+Prednost genetskog algoritma u odnosu na simulirano kaljenje je i u visestrukosti resenja. Simuliranim kaljenjem mi samo poboljsavamo jedno resenje. Bolja je pretraga zasnovana na $m$ > 1 dobrih resenja.
 
 \section{Zaključak}
 \label{sec:zakljucak}
