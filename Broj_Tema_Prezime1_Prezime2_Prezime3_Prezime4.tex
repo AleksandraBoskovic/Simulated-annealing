@@ -147,6 +147,45 @@ Prednost simuliranog kaljenja (u odnosu na klasican genetski algoritam) je dobra
 Ovaj nedostatak moze da se prevazidje sa vise zasebnih izvrsavanja. Svako sledece izvrsavanje pocinjemo sa novim pocetnim resenjem. Na kraju uzimamo najbolji finalni rezultat. U narednim iteracijama ne koristimo znanje dobijeno u prethodnim iteracijama. To je mana ovog pristupa. \par
 Prednost genetskog algoritma u odnosu na simulirano kaljenje je i u visestrukosti resenja. Simuliranim kaljenjem mi samo poboljsavamo jedno resenje. Bolja je pretraga zasnovana na $m$ > 1 dobrih resenja.
 
+\subsection{Eksperimentalni rezultati??}
+
+U ovom poglavlju cemo prikazati i uporediti rezultate primene simuliranog i genetskog kaljenja. Primeri ce nam biti problem trgovackog putnika i lokacijski problem rutiranja inventara.  
+
+\subsubsection{Problem trgovackog putnika (TSP) (c)}
+
+Broj gradova na kome testiramo ce biti 40. Kod genetskog kaljenja broj jedinki pocetne populacije ce biti 5, dok ce u svakoj narednoj generaciji broj jedinki biti 8. Broj uzastopnih izvrsavanja simuliranog kaljenja ce biti 40. Maksimalan broj iteracija za oba algoritma ce biti 2400. Rezultati dobijeni na 10 razlicitih primera su prikazani u tabeli \ref{tabela:1}. \\ 
+
+
+
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{|c|c|c|} \hline
+     No & Genetsko kaljenje & Simulirano kaljenje  \\ \hline
+     1 &  3180 & 3360 \\ \hline
+     2 &  2900 & 3020 \\ \hline
+     3 &  3040 & 3100 \\ \hline
+     4 &  3120 & 3460 \\ \hline
+     5 &  2300 & 2460 \\ \hline
+     6 &  3100 & 3100 \\ \hline
+     7 &  2420 & 2720 \\ \hline
+     8 &  2400 & 2080 \\ \hline
+     9 &  3220 & 3300 \\ \hline
+     10 & 3040 & 3120 \\ \hline
+\end{tabular}
+\end{center}
+\label{tabela:1}
+\caption{Dobijeni rezultati na problemu trgovackog putnika}
+\end{table}
+Iz prikazanog mozemo videti da smo u vecini slucajeva unapredjenom varijantom dobili bolje rezultate. Ovde su izuzetak bili 6. i 8. primer. Kod 6. smo dobili identicne rezultate, dok je u 8. primeru simulirano kaljenje dalo bolji rezultat.
+
+\subsubsection{Lokacijski problem rutiranja inventara (eng. \textit{Location-Inventory-Routing Problem}, LIRP) (c)}
+\newpage
+\large{Opis problema} \\ \normalsize
+
+Lanac elektronske trgovine cine proizvodjac, robni centri i prodajni objekti. Roba koja se sa prodajnih mesta vraca u robne centre je uglavnom u dobrom stanju i posle samog prepakovanja se moze vratiti u prodaju. 
+
+
+
 \section{Zaključak}
 \label{sec:zakljucak}
 
